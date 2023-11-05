@@ -18,12 +18,13 @@ export const ResultDetail = ({ item }: ResultDetailProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    // marginLeft: 15,
+    marginLeft: 15,
   },
   image: {
     width: 250,
     height: 120,
     borderRadius: 4,
+    marginBottom: 5,
   },
   textName: {
     fontWeight: "bold",

@@ -6,3 +6,8 @@ export type YelpBusinessesResult = {
   rating: number
   review_count: number
 }
+
+export type YelpBusinessResult = {
+  id: string
+  name: string
+}

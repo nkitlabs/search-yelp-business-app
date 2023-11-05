@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, ScrollView } from "react-native"
+import { NativeStackScreenProps } from "@react-navigation/native-stack"
 
 import { SearchBar } from "@components/SearchBar"
-import yelp from "@api/yelp"
 import { useYelpBusinessesResult } from "@src/hooks/useYelpBusinessesResult"
 import { ResultList } from "@components/ResultList"
 
@@ -20,27 +20,22 @@ const SearchScreen = () => {
     }, [result])
 
   return (
-    <View style={styles.container}>
+    <>
       <SearchBar
         query={query}
         onQueryChange={setQuery}
         onQuerySubmit={searchApi}
       />
-      <Text>Search screen</Text>
       {isError ? <Text>Something went wrong</Text> : null}
-      <Text>We have found {result.length} results</Text>
-
-      <ResultList results={costEffectiveResult} title="Cost Effective" />
-      <ResultList results={bitPricierResult} title="Bit Pricier" />
-      <ResultList results={bigSpenderResult} title="Big Spender" />
-    </View>
+      <ScrollView>
+        <ResultList results={costEffectiveResult} title="Cost Effective" />
+        <ResultList results={bitPricierResult} title="Bit Pricier" />
+        <ResultList results={bigSpenderResult} title="Big Spender" />
+      </ScrollView>
+    </>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    // marginLeft: 30,
-  },
-})
+const styles = StyleSheet.create({})
 
 export default SearchScreen

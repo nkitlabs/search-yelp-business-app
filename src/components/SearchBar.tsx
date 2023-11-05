@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 15,
     marginHorizontal: 15,
+    marginBottom: 10,
     flexDirection: "row",
   },
   input: {
