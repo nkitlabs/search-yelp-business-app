@@ -10,4 +10,5 @@ export type YelpBusinessesResult = {
 export type YelpBusinessResult = {
   id: string
   name: string
+  photos: string[]
 }
